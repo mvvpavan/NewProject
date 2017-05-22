@@ -54,6 +54,7 @@
     <![endif]-->
  
   </head>
+  
   <body>    
 
     <!-- SCROLL TOP BUTTON -->
@@ -150,7 +151,7 @@
                    <div class="slider_caption">
                     <h2>BrightFeatureHub</h2>
                     <p>BrightFeatureHub is a place where connecting students and tutors.</p>
-                    <a class="slider_btn" href="#">CONTACT FOR TUTOR</a> <a class="slider_btn" href="#">CONTACT FOR STUDENT</a>
+                    <a class="slider_btn" data-toggle="modal" data-target="#contactTutor">CONTACT FOR TUTOR</a> <a class="slider_btn" data-toggle="modal" data-target="#ContactStudent">CONTACT FOR STUDENT</a>
                   </div>
                   </li>
                 <!-- Start single slider-->
@@ -159,7 +160,7 @@
                    <div class="slider_caption slider_right_caption">
                     <h2>Better Education Environment</h2>
                     <p>Students can find tutors for online private tutoring and helps to solve their problems.</p>
-                     <a class="slider_btn" href="#">CONTACT FOR TUTOR</a> <a class="slider_btn" href="#">CONTACT FOR STUDENT</a>
+                     <a class="slider_btn" data-toggle="modal" data-target="#contactTutor">CONTACT FOR TUTOR</a> <a class="slider_btn" data-toggle="modal" data-target="#ContactStudent">CONTACT FOR STUDENT</a>
                   </div>
                 </li>
                 <!-- Start single slider-->
@@ -168,7 +169,7 @@
                    <div class="slider_caption">
                     <h2>Find out you in better way</h2>
                     <p>Our instructors are renowned industry experts with vast experience. They consistently create valuable content and deliver training in innovative ways so as to ensure that you can make a difference at your job and become indispensable to your organization.</p>
-                    <a class="slider_btn" href="#">CONTACT FOR  TUTOR</a> <a class="slider_btn" href="#">CONTACT FOR STUDENT</a>
+                    <a class="slider_btn" data-toggle="modal" data-target="#contactTutor">CONTACT FOR  TUTOR</a> <a class="slider_btn" data-toggle="modal" data-target="#ContactStudent">CONTACT FOR STUDENT</a>
                   </div>
                 </li>
               </ul>
@@ -1116,13 +1117,13 @@
             <h4 class="modal-title" style="margin-left: 250px; color:white;font-size:27"><strong>LOGIN</strong></h4>
           </div>
           <div class="modal-body">
-            <form class="form-horizontal" role="form">
+            <form class="form-horizontal" role="form" method="POST" action="PHP/login.php" autocomplete="off">
               <div class="form-group" style="margin-left: 70px;">
                 <div class="col-sm-2">
                   <label for="inputEmail3" class="control-label" style="color:white">EMAIL</label>
                 </div>
                 <div class="col-sm-8">
-                  <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                  <input type="email" class="form-control" name="email" id="inputEmail3" placeholder="Email">
                 </div>
               </div>
               <div class="form-group" style="margin-left: 70px;">
@@ -1130,7 +1131,7 @@
                   <label for="inputPassword3" class="control-label" style="color:white">PASSWORD</label>
                 </div>
                 <div class="col-sm-8">
-                  <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                  <input type="password" class="form-control" name="password"id="inputPassword3" placeholder="Password">
                 </div>
               </div>
               <div class="form-group" style="margin-left: 70px;">
@@ -1141,7 +1142,8 @@
           </div>
           <div class="modal-footer">
             
-            <a class="btn btn-primary">Submit</a>
+            <input id="button" type="submit" name="submit" class="btn btn-primary" value="Sign-Up">
+    
           </div>
              </form>
         </div>
@@ -1168,7 +1170,8 @@
           </div>
           <div class="modal-footer">
             
-            <a class="btn btn-primary">Submit</a>
+            <input id="button" type="submit" name="submit" class="btn btn-primary" value="Sign-Up">
+    
           </div>
            </form>
         </div>
@@ -1183,13 +1186,13 @@
             <h4 class="modal-title" style="margin-left: 250px; color:white;font-size:27">REGISTER</h4>
           </div>
           <div class="modal-body">
-            <form class="form-horizontal" role="form">
+            <form class="form-horizontal" role="form" method="POST" action="PHP/NewUserRegister.php" autocomplete="off">
             <div class="form-group" style="margin-left: 70px; color:white;" >
                 <div class="col-sm-4" >
-                   <input type="radio" style="margin-left: 60px;" name="sex" value="male" >Student
+                   <input type="radio" style="margin-left: 60px;" name="type" checked="checked" value="Student" >Student
                 </div>
                 <div class="col-sm-4">
-                  <input type="radio" name="sex" value="female">Tutor
+                  <input type="radio" name="type" value="Tutor">Tutor
                 </div>
               </div>
               <div class="form-group" style="margin-left: 30px; color:white;">
@@ -1197,7 +1200,7 @@
                   <label for="inputEmail3" class="control-label">NAME</label>
                 </div>
                 <div class="col-sm-10">
-                  <input type="email" class="form-control" id="inputEmail3"  style="width:340px" placeholder="Name">
+                  <input type="text" class="form-control" id="inputEmail3" name="name" style="width:340px" placeholder="Name">
                 </div>
               </div>
               <div class="form-group" style="margin-left: 30px; color:white;">
@@ -1205,7 +1208,7 @@
                   <label for="inputEmail3" class="control-label">Email</label>
                 </div>
                 <div class="col-sm-10">
-                  <input type="email" class="form-control" id="inputEmail3"  style="width:340px" placeholder="Email">
+                  <input type="email" class="form-control" name="email" id="inputEmail3"  style="width:340px" placeholder="Email">
                 </div>
               </div>
               <div class="form-group" style="margin-left: 30px; color:white;">
@@ -1213,7 +1216,7 @@
                   <label for="inputPassword3" class="control-label">Password</label>
                 </div>
                 <div class="col-sm-10">
-                  <input type="password" class="form-control" id="inputPassword3" style="width:340px" placeholder="Password">
+                  <input type="password" class="form-control" name="password" id="inputPassword3" style="width:340px" placeholder="Password">
                 </div>
               </div>
               <div class="form-group" style="margin-left: 30px;">
@@ -1441,7 +1444,7 @@
 </select>
    </div> &nbsp; &nbsp; &nbsp;
              <div class="col-sm-6">
-                  <input type="email" class="form-control" id="inputEmail3"  placeholder="Mobile">
+                  <input type="number" class="form-control" id="inputEmail3" name="mobile" placeholder="Mobile">
                 </div>
               </div>
 
@@ -1449,10 +1452,65 @@
           </div>
           <div class="modal-footer">
             
-            <a class="btn btn-primary">Submit</a>
+             <input id="button" type="submit" name="submit" class="btn btn-primary" value="Sign-Up">
+          
           </div>
         </div>
         </form>
+      </div>
+    </div>
+	
+	<!--- contact tutor --->
+	<div id="contactTutor" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content" style="background-color: #558C89">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4 class="modal-title" style="margin-left: 200px; color:white;font-size:27"><strong>RECOVER PASSWORD</strong></h4>
+          </div>
+          <div class="modal-body">
+            <form class="form-horizontal" role="form">
+              <div class="form-group" >
+                <div class="col-sm-2">
+                 <input id="button" type="submit" name="submit" class="btn btn-primary" value="NEW USER">
+                </div>
+                <div class="col-sm-10">
+                <input id="button" type="submit" name="submit" class="btn btn-primary" value="Already Register USER">
+                </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+            
+          </div>
+           </form>
+        </div>
+      </div>
+    </div>
+	<!--- contact Student...--->
+	<div id="ContactStudent" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content" style="background-color: #558C89">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4 class="modal-title" style="margin-left: 200px; color:white;font-size:27"><strong>CONTACT STUDENT</strong></h4>
+          </div>
+          <div class="modal-body">
+            <form class="form-horizontal" role="form">
+              <div class="form-group">
+                <div class="col-sm-2">
+                   <input id="button" type="submit" name="submit" class="btn btn-primary" value="New User">
+                </div>
+                <div class="col-sm-10" >
+                   <input id="button" type="submit" name="submit" class="btn btn-primary" value="Already Register">
+                </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+            
+          
+          </div>
+           </form>
+        </div>
       </div>
     </div>
 
