@@ -1,5 +1,6 @@
 <?php
    include 'DBConnection.php';
+   session_id('mySessionID');
    session_start();
    
    if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -8,19 +9,23 @@
       $myusername = $_POST['email'];
       $mypassword = $_POST['password']; 
       
-      $query = mysql_query("SELECT email,type,password FROM users WHERE email = '$_POST[email]' AND password = '$_POST[password]'") or die(mysql_error()); 
+      $query = mysql_query("SELECT fullname,email,type,password FROM users WHERE email = '$_POST[email]' AND password = '$_POST[password]'") or die(mysql_error()); 
    if($row = mysql_fetch_array($query,MYSQLI_ASSOC) or die(mysql_error())) 
       {  
         $count = 1; 	 
          if ( strcasecmp( $row['type'], 'Student' ) == 0 ){
-
+           
+               $_SESSION['fullname']=$row['fullname'];
+			    $_SESSION['email']=$row['email'];
                 echo 'Student Sccessfull logged in';
-                header("Location: ../AdminLTE-master/Studentdashboard.html");
+                header("Location: ../AdminLTE-master/Studentdashboard.php");
 
             }
 	   else{
+		        $_SESSION['fullname']=$row['fullname'];
+			    $_SESSION['email']=$row['email'];
 		         echo 'Tutor  Sccessfull logged in';
-             header("Location: ../AdminLTE-master/index.html");
+             header("Location: ../AdminLTE-master/index.php");
 	         }
       
    

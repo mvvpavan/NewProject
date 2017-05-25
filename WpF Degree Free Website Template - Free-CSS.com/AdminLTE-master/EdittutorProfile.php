@@ -1,3 +1,4 @@
+<?php session_id('mySessionID'); session_start();?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -259,7 +260,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Alexander Pierce</span>
+              <span class="hidden-xs"><?php echo $_SESSION['fullname'];?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -292,7 +293,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                   <a href="../PHP/Logout.php" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
@@ -341,11 +342,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i>Student</a></li>
-           </ul>
-		   <ul class="treeview-menu">
-            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i>Tutor</a></li>
-           </ul>
+            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> CREATE WORKSHOP</a></li>
+             <li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i> SEARCH JOBS</a></li>
+          </ul>
         </li>
         <li class="treeview">
           <a href="#">
@@ -356,10 +355,23 @@
             </span>
           </a>
           <ul class="treeview-menu">
+            <li><a href="pages/layout/top-nav.html"><i class="fa fa-user-circle-o"></i> EDIT PROFILE</a></li>
             <li><a href="pages/layout/boxed.html"><i class="fa fa-user-circle-o"></i> CHANGE PASSWORD</a></li>
           </ul>
         </li>
-        
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-user"></i>
+            <span>Student</span>
+            <span class="pull-right-container">
+              <span class="label label-primary pull-right">4</span>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="pages/layout/top-nav.html"><i class="fa fa-user-circle-o"></i> Student inquiries</a></li>
+            <li><a href="pages/layout/boxed.html"><i class="fa fa-user-circle-o"></i> Applied JOBS</a></li>
+          </ul>
+        </li>
         <li>
           <a href="pages/mailbox/mailbox.html">
             <i class="fa fa-envelope"></i> <span>Mailbox</span>
@@ -393,69 +405,7 @@
 
     <!-- Main content -->
     <section class="content">
-      <!-- Small boxes (Stat box) -->
-      <div class="row">
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-aqua">
-            <div class="inner">
-              <h3>150</h3>
-
-              <p>Created JOBS</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-bag"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-green">
-            <div class="inner">
-              <h3>53<sup style="font-size: 20px">%</sup></h3>
-
-              <p>Assignment</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-stats-bars"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-yellow">
-            <div class="inner">
-              <h3>44</h3>
-
-              <p>TUTOR INQUIRIES</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-person-add"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-red">
-            <div class="inner">
-              <h3>65</h3>
-
-              <p>TUTOR RATING</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-pie-graph"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-      </div>
+     
       <!-- /.row -->
       <!-- Main row -->
       <div class="row">
@@ -468,31 +418,54 @@
             <!-- /.box-header -->
             <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Create WorkShops</h3>
+              <h3 class="box-title">Edit Profile</h3>
             </div>
             <!-- /.box-header -->
-             <!-- form start -->
+            <!-- form start -->
             <form role="form"method="POST" action="../PHP/CreateWorkshop.php">
               <div class="box-body">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Title Workshop</label>
-                  <input type="text" class="form-control" name="title" id="exampleInputEmail1" placeholder="Enter text">
-                </div>
+                  <label for="exampleInputEmail1">Title (ex. Mr, Ms, Dr)</label>
+                <select class="form-control" name="title" >
+                     <option value="Mr"Mr</option>
+                     <option value="Ms"Ms</option>
+					  <option value="Dr">Dr</option>
+                   </select></div>
+				<div class="form-group">
+                  <label for="exampleInputEmail1">Gender</label>
+                  <select class="form-control" name="Gender" >
+                     <option value="Male">Male</option>
+                     <option value="Female">Female</option>
+                   </select></div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Date</label>
+                  <label for="exampleInputEmail1">Phone / Mobile</label>
                   <input type="date" class="form-control" name="date" id="exampleInputEmail1" placeholder="Enter date">
                 </div>
+				 <div class="form-group" >
+                  <label for="exampleInputEmail1">Address</label>
+                <textarea  class="form-control" name="address" >Enter address
+                </textarea>
+				</div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Time</label>
+                  <label for="exampleInputEmail1">Country</label>
                   <input type="time" class="form-control" name="time" id="exampleInputEmail1" placeholder="Enter time">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Cost per student ($) </label>
+                  <label for="exampleInputEmail1">State </label>
                   <input type="text" class="form-control" name="cost" id="exampleInputEmail1" placeholder="Example 100$ else default $">
                 </div>
 				<div class="form-group">
-                  <label for="exampleInputEmail1">Capacity</label>
+                  <label for="exampleInputEmail1">City</label>
                   <input type="text" class="form-control" name="capacity"id="exampleInputEmail1" placeholder="Example 100$ else default $">
+                </div>
+				<div class="form-group">
+                  <label for="exampleInputEmail1">website</label>
+                  <input type="text" class="form-control" name="capacity"id="exampleInputEmail1" placeholder="Example 100$ else default $">
+                </div>
+				<div class="form-group">
+                  <label for="exampleInputFile">Upload photo</label>
+                  <input type="file" id="exampleInputFile">
+                  <p class="help-block">Max Size up to 1mb.</p>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Venu</label>
@@ -501,411 +474,40 @@
                      <option value="Institute">Institute</option>
                    </select>
                 </div>
-                <div class="form-group" >
-                  <label for="exampleInputEmail1">Address</label>
+				 <div class="form-group" >
+                  <label for="exampleInputEmail1">About You</label>
+                <textarea  class="form-control" name="address" >
+                </textarea>
+				</div>
+				 <div class="form-group" >
+                  <label for="exampleInputEmail1">Select Subject</label>
                 <textarea  class="form-control" name="address" >Enter address
-                </textarea></div>
+                </textarea>
+				</div>
+				<div class="form-group">
+                  <label for="exampleInputEmail1">Experiance</label>
+                  <input type="text" class="form-control" name="capacity"id="exampleInputEmail1" placeholder="Example 100$ else default $">
+                </div>
+               
               </div>
               <!-- /.box-body -->
 
               <div class="box-footer">
-                   <input id="button" type="submit" name="submit" class="btn btn-primary" value="NewWorkShop">
+                <input id="button" type="submit" name="submit" class="btn btn-primary" value="Edit_Profile">
               </div>
             </form>
           </div>
-          <!-- /.box -->
-		    <!-- /.box-header -->
-            <div class="box box-primary">
-            <div class="box-header with-border">
-              <h3 class="box-title">latest Updates</h3>
-            </div>
-            <!-- /.box-header -->
-            <!-- form start -->
-            <form role="form">
-              <div class="box-body">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputFile">File input</label>
-                  <input type="file" id="exampleInputFile">
-
-                  <p class="help-block">Example block-level help text here.</p>
-                </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> Check me out
-                  </label>
-                </div>
-              </div>
-              <!-- /.box-body -->
-
-              <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </div>
-            </form>
-          </div>
-        <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">LATEST UPDATES ON PAGE</h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body no-padding">
-              <table class="table table-striped">
-                <tr>
-                  <th style="width: 10px">#</th>
-                  <th>Task</th>
-                  <th>Progress</th>
-                  <th style="width: 40px">Label</th>
-                </tr>
-                <tr>
-                  <td>1.</td>
-                  <td>Update software</td>
-                  <td>
-                    <div class="progress progress-xs">
-                      <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-red">55%</span></td>
-                </tr>
-                <tr>
-                  <td>2.</td>
-                  <td>Clean database</td>
-                  <td>
-                    <div class="progress progress-xs">
-                      <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-yellow">70%</span></td>
-                </tr>
-                <tr>
-                  <td>3.</td>
-                  <td>Cron job running</td>
-                  <td>
-                    <div class="progress progress-xs progress-striped active">
-                      <div class="progress-bar progress-bar-primary" style="width: 30%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-light-blue">30%</span></td>
-                </tr>
-                <tr>
-                  <td>4.</td>
-                  <td>Fix and squish bugs</td>
-                  <td>
-                    <div class="progress progress-xs progress-striped active">
-                      <div class="progress-bar progress-bar-success" style="width: 90%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-green">90%</span></td>
-                </tr>
-              </table>
-            </div>
-            <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Student Appied</h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body no-padding">
-              <table class="table table-striped">
-                <tr>
-                  <th style="width: 10px">#</th>
-                  <th>Task</th>
-                  <th>Progress</th>
-                  <th style="width: 40px">Label</th>
-                </tr>
-                <tr>
-                  <td>1.</td>
-                  <td>Update software</td>
-                  <td>
-                    <div class="progress progress-xs">
-                      <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-red">55%</span></td>
-                </tr>
-                <tr>
-                  <td>2.</td>
-                  <td>Clean database</td>
-                  <td>
-                    <div class="progress progress-xs">
-                      <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-yellow">70%</span></td>
-                </tr>
-                <tr>
-                  <td>3.</td>
-                  <td>Cron job running</td>
-                  <td>
-                    <div class="progress progress-xs progress-striped active">
-                      <div class="progress-bar progress-bar-primary" style="width: 30%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-light-blue">30%</span></td>
-                </tr>
-                <tr>
-                  <td>4.</td>
-                  <td>Fix and squish bugs</td>
-                  <td>
-                    <div class="progress progress-xs progress-striped active">
-                      <div class="progress-bar progress-bar-success" style="width: 90%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-green">90%</span></td>
-                </tr>
-              </table>
-            </div>
-            <!-- /.box-body -->
-          </div>
-         
-
+       
         </section>
         <!-- /.Left col -->
         <!-- right col (We are only adding the ID to make the widgets sortable)-->
-        <section class="col-lg-5 connectedSortable">
-
-          <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Create WORKSHOPS</h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body no-padding">
-              <table class="table table-striped">
-                <tr>
-                  <th style="width: 10px">#</th>
-                  <th>Task</th>
-                  <th>Progress</th>
-                  <th style="width: 40px">Label</th>
-                </tr>
-                <tr>
-                  <td>1.</td>
-                  <td>Update software</td>
-                  <td>
-                    <div class="progress progress-xs">
-                      <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-red">55%</span></td>
-                </tr>
-                <tr>
-                  <td>2.</td>
-                  <td>Clean database</td>
-                  <td>
-                    <div class="progress progress-xs">
-                      <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-yellow">70%</span></td>
-                </tr>
-                <tr>
-                  <td>3.</td>
-                  <td>Cron job running</td>
-                  <td>
-                    <div class="progress progress-xs progress-striped active">
-                      <div class="progress-bar progress-bar-primary" style="width: 30%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-light-blue">30%</span></td>
-                </tr>
-                <tr>
-                  <td>4.</td>
-                  <td>Fix and squish bugs</td>
-                  <td>
-                    <div class="progress progress-xs progress-striped active">
-                      <div class="progress-bar progress-bar-success" style="width: 90%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-green">90%</span></td>
-                </tr>
-              </table>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          
-            <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Total Student List</h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body no-padding">
-              <table class="table table-striped">
-                <tr>
-                  <th style="width: 10px">#</th>
-                  <th>Task</th>
-                  <th>Progress</th>
-                  <th style="width: 40px">Label</th>
-                </tr>
-                <tr>
-                  <td>1.</td>
-                  <td>Update software</td>
-                  <td>
-                    <div class="progress progress-xs">
-                      <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-red">55%</span></td>
-                </tr>
-                <tr>
-                  <td>2.</td>
-                  <td>Clean database</td>
-                  <td>
-                    <div class="progress progress-xs">
-                      <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-yellow">70%</span></td>
-                </tr>
-                <tr>
-                  <td>3.</td>
-                  <td>Cron job running</td>
-                  <td>
-                    <div class="progress progress-xs progress-striped active">
-                      <div class="progress-bar progress-bar-primary" style="width: 30%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-light-blue">30%</span></td>
-                </tr>
-                <tr>
-                  <td>4.</td>
-                  <td>Fix and squish bugs</td>
-                  <td>
-                    <div class="progress progress-xs progress-striped active">
-                      <div class="progress-bar progress-bar-success" style="width: 90%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-green">90%</span></td>
-                </tr>
-              </table>
-            </div>
-            <!-- /.box-body -->
-          </div>
-		   <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Total Tutors List</h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body no-padding">
-              <table class="table table-striped">
-                <tr>
-                  <th style="width: 10px">#</th>
-                  <th>Task</th>
-                  <th>Progress</th>
-                  <th style="width: 40px">Label</th>
-                </tr>
-                <tr>
-                  <td>1.</td>
-                  <td>Update software</td>
-                  <td>
-                    <div class="progress progress-xs">
-                      <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-red">55%</span></td>
-                </tr>
-                <tr>
-                  <td>2.</td>
-                  <td>Clean database</td>
-                  <td>
-                    <div class="progress progress-xs">
-                      <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-yellow">70%</span></td>
-                </tr>
-                <tr>
-                  <td>3.</td>
-                  <td>Cron job running</td>
-                  <td>
-                    <div class="progress progress-xs progress-striped active">
-                      <div class="progress-bar progress-bar-primary" style="width: 30%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-light-blue">30%</span></td>
-                </tr>
-                <tr>
-                  <td>4.</td>
-                  <td>Fix and squish bugs</td>
-                  <td>
-                    <div class="progress progress-xs progress-striped active">
-                      <div class="progress-bar progress-bar-success" style="width: 90%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-green">90%</span></td>
-                </tr>
-              </table>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">NEW WORKSHOPS</h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body no-padding">
-              <table class="table table-striped">
-                <tr>
-                  <th style="width: 10px">#</th>
-                  <th>Task</th>
-                  <th>Progress</th>
-                  <th style="width: 40px">Label</th>
-                </tr>
-                <tr>
-                  <td>1.</td>
-                  <td>Update software</td>
-                  <td>
-                    <div class="progress progress-xs">
-                      <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-red">55%</span></td>
-                </tr>
-                <tr>
-                  <td>2.</td>
-                  <td>Clean database</td>
-                  <td>
-                    <div class="progress progress-xs">
-                      <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-yellow">70%</span></td>
-                </tr>
-                <tr>
-                  <td>3.</td>
-                  <td>Cron job running</td>
-                  <td>
-                    <div class="progress progress-xs progress-striped active">
-                      <div class="progress-bar progress-bar-primary" style="width: 30%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-light-blue">30%</span></td>
-                </tr>
-                <tr>
-                  <td>4.</td>
-                  <td>Fix and squish bugs</td>
-                  <td>
-                    <div class="progress progress-xs progress-striped active">
-                      <div class="progress-bar progress-bar-success" style="width: 90%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-green">90%</span></td>
-                </tr>
-              </table>
-            </div>
-            <!-- /.box-body -->
-          </div>
-        </section>
-        <!-- right col -->
-      </div>
-      <!-- /.row (main row) -->
-
-    </section>
+      
     <!-- /.content -->
   </div>
+</section>
+
+    <!-- /.content -->
+</div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <div class="pull-right hidden-xs">

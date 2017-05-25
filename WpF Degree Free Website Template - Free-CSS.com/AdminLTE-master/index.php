@@ -1,3 +1,4 @@
+<?php session_id('mySessionID'); session_start();?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -259,7 +260,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Alexander Pierce</span>
+              <span class="hidden-xs"><?php echo $_SESSION['fullname'];?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -292,7 +293,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                   <a href="../PHP/Logout.php" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
@@ -341,11 +342,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i>Student</a></li>
-           </ul>
-		   <ul class="treeview-menu">
-            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i>Tutor</a></li>
-           </ul>
+            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> CREATE WORKSHOP</a></li>
+             <li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i> SEARCH JOBS</a></li>
+          </ul>
         </li>
         <li class="treeview">
           <a href="#">
@@ -356,10 +355,23 @@
             </span>
           </a>
           <ul class="treeview-menu">
+            <li><a href="EdittutorProfile.php"><i class="fa fa-user-circle-o"></i> EDIT PROFILE</a></li>
             <li><a href="pages/layout/boxed.html"><i class="fa fa-user-circle-o"></i> CHANGE PASSWORD</a></li>
           </ul>
         </li>
-        
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-user"></i>
+            <span>Student</span>
+            <span class="pull-right-container">
+              <span class="label label-primary pull-right">4</span>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="pages/layout/top-nav.html"><i class="fa fa-user-circle-o"></i> Student inquiries</a></li>
+            <li><a href="pages/layout/boxed.html"><i class="fa fa-user-circle-o"></i> Applied JOBS</a></li>
+          </ul>
+        </li>
         <li>
           <a href="pages/mailbox/mailbox.html">
             <i class="fa fa-envelope"></i> <span>Mailbox</span>
@@ -401,7 +413,7 @@
             <div class="inner">
               <h3>150</h3>
 
-              <p>Created JOBS</p>
+              <p>APPLIED JOBS</p>
             </div>
             <div class="icon">
               <i class="ion ion-bag"></i>
@@ -416,7 +428,7 @@
             <div class="inner">
               <h3>53<sup style="font-size: 20px">%</sup></h3>
 
-              <p>Assignment</p>
+              <p>WORKSHOPS</p>
             </div>
             <div class="icon">
               <i class="ion ion-stats-bars"></i>
@@ -431,7 +443,7 @@
             <div class="inner">
               <h3>44</h3>
 
-              <p>TUTOR INQUIRIES</p>
+              <p>STUDENT INQUIRIES</p>
             </div>
             <div class="icon">
               <i class="ion ion-person-add"></i>
@@ -446,7 +458,7 @@
             <div class="inner">
               <h3>65</h3>
 
-              <p>TUTOR RATING</p>
+              <p>STUDENT RATING</p>
             </div>
             <div class="icon">
               <i class="ion ion-pie-graph"></i>
@@ -468,10 +480,10 @@
             <!-- /.box-header -->
             <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Create WorkShops</h3>
+              <h3 class="box-title">Create Workshop</h3>
             </div>
             <!-- /.box-header -->
-             <!-- form start -->
+            <!-- form start -->
             <form role="form"method="POST" action="../PHP/CreateWorkshop.php">
               <div class="box-body">
                 <div class="form-group">
@@ -509,47 +521,11 @@
               <!-- /.box-body -->
 
               <div class="box-footer">
-                   <input id="button" type="submit" name="submit" class="btn btn-primary" value="NewWorkShop">
+                <input id="button" type="submit" name="submit" class="btn btn-primary" value="NewWorkShop">
               </div>
             </form>
           </div>
           <!-- /.box -->
-		    <!-- /.box-header -->
-            <div class="box box-primary">
-            <div class="box-header with-border">
-              <h3 class="box-title">latest Updates</h3>
-            </div>
-            <!-- /.box-header -->
-            <!-- form start -->
-            <form role="form">
-              <div class="box-body">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputFile">File input</label>
-                  <input type="file" id="exampleInputFile">
-
-                  <p class="help-block">Example block-level help text here.</p>
-                </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> Check me out
-                  </label>
-                </div>
-              </div>
-              <!-- /.box-body -->
-
-              <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </div>
-            </form>
-          </div>
         <div class="box">
             <div class="box-header">
               <h3 class="box-title">LATEST UPDATES ON PAGE</h3>
@@ -607,7 +583,7 @@
             </div>
             <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Student Appied</h3>
+              <h3 class="box-title">APPLIED JOBS</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body no-padding">
@@ -671,7 +647,7 @@
 
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Create WORKSHOPS</h3>
+              <h3 class="box-title">LATEST WORKSHOPS</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body no-padding">
@@ -729,64 +705,7 @@
           
             <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Total Student List</h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body no-padding">
-              <table class="table table-striped">
-                <tr>
-                  <th style="width: 10px">#</th>
-                  <th>Task</th>
-                  <th>Progress</th>
-                  <th style="width: 40px">Label</th>
-                </tr>
-                <tr>
-                  <td>1.</td>
-                  <td>Update software</td>
-                  <td>
-                    <div class="progress progress-xs">
-                      <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-red">55%</span></td>
-                </tr>
-                <tr>
-                  <td>2.</td>
-                  <td>Clean database</td>
-                  <td>
-                    <div class="progress progress-xs">
-                      <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-yellow">70%</span></td>
-                </tr>
-                <tr>
-                  <td>3.</td>
-                  <td>Cron job running</td>
-                  <td>
-                    <div class="progress progress-xs progress-striped active">
-                      <div class="progress-bar progress-bar-primary" style="width: 30%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-light-blue">30%</span></td>
-                </tr>
-                <tr>
-                  <td>4.</td>
-                  <td>Fix and squish bugs</td>
-                  <td>
-                    <div class="progress progress-xs progress-striped active">
-                      <div class="progress-bar progress-bar-success" style="width: 90%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-green">90%</span></td>
-                </tr>
-              </table>
-            </div>
-            <!-- /.box-body -->
-          </div>
-		   <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Total Tutors List</h3>
+              <h3 class="box-title">STUDENT INQUIRED</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body no-padding">

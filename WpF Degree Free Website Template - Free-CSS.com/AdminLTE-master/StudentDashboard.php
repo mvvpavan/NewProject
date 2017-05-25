@@ -1,3 +1,4 @@
+<?php session_id('mySessionID'); session_start();?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -259,7 +260,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Alexander Pierce</span>
+              <span class="hidden-xs">pavan Kumar</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -267,7 +268,7 @@
                 <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  Alexander Pierce - Web Developer
+                  pavan Kumar
                   <small>Member since Nov. 2012</small>
                 </p>
               </li>
@@ -292,7 +293,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="../PHP/Logout.php" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
@@ -315,7 +316,7 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p><?php echo '<h5> name:'.$_SESSION['fullname'].'</h5>';?></p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -341,10 +342,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i>Student</a></li>
-           </ul>
-		   <ul class="treeview-menu">
-            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i>Tutor</a></li>
+            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Request For Tution</a></li>
            </ul>
         </li>
         <li class="treeview">
@@ -356,10 +354,22 @@
             </span>
           </a>
           <ul class="treeview-menu">
+            <li><a href="pages/layout/top-nav.html"><i class="fa fa-user-circle-o"></i> EDIT PROFILE</a></li>
             <li><a href="pages/layout/boxed.html"><i class="fa fa-user-circle-o"></i> CHANGE PASSWORD</a></li>
           </ul>
         </li>
-        
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-user"></i>
+            <span>Tutor</span>
+            <span class="pull-right-container">
+              <span class="label label-primary pull-right">4</span>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="pages/layout/top-nav.html"><i class="fa fa-user-circle-o"></i> Tutors inquiries</a></li>
+          </ul>
+        </li>
         <li>
           <a href="pages/mailbox/mailbox.html">
             <i class="fa fa-envelope"></i> <span>Mailbox</span>
@@ -468,56 +478,7 @@
             <!-- /.box-header -->
             <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Create WorkShops</h3>
-            </div>
-            <!-- /.box-header -->
-             <!-- form start -->
-            <form role="form"method="POST" action="../PHP/CreateWorkshop.php">
-              <div class="box-body">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Title Workshop</label>
-                  <input type="text" class="form-control" name="title" id="exampleInputEmail1" placeholder="Enter text">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Date</label>
-                  <input type="date" class="form-control" name="date" id="exampleInputEmail1" placeholder="Enter date">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Time</label>
-                  <input type="time" class="form-control" name="time" id="exampleInputEmail1" placeholder="Enter time">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Cost per student ($) </label>
-                  <input type="text" class="form-control" name="cost" id="exampleInputEmail1" placeholder="Example 100$ else default $">
-                </div>
-				<div class="form-group">
-                  <label for="exampleInputEmail1">Capacity</label>
-                  <input type="text" class="form-control" name="capacity"id="exampleInputEmail1" placeholder="Example 100$ else default $">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Venu</label>
-                  <select class="form-control" name="venu" >
-                     <option value="Online">Online</option>
-                     <option value="Institute">Institute</option>
-                   </select>
-                </div>
-                <div class="form-group" >
-                  <label for="exampleInputEmail1">Address</label>
-                <textarea  class="form-control" name="address" >Enter address
-                </textarea></div>
-              </div>
-              <!-- /.box-body -->
-
-              <div class="box-footer">
-                   <input id="button" type="submit" name="submit" class="btn btn-primary" value="NewWorkShop">
-              </div>
-            </form>
-          </div>
-          <!-- /.box -->
-		    <!-- /.box-header -->
-            <div class="box box-primary">
-            <div class="box-header with-border">
-              <h3 class="box-title">latest Updates</h3>
+              <h3 class="box-title">Request Tutor</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
@@ -550,6 +511,7 @@
               </div>
             </form>
           </div>
+          <!-- /.box -->
         <div class="box">
             <div class="box-header">
               <h3 class="box-title">LATEST UPDATES ON PAGE</h3>
@@ -607,7 +569,7 @@
             </div>
             <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Student Appied</h3>
+              <h3 class="box-title">APPLIED JOBS</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body no-padding">
@@ -729,64 +691,7 @@
           
             <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Total Student List</h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body no-padding">
-              <table class="table table-striped">
-                <tr>
-                  <th style="width: 10px">#</th>
-                  <th>Task</th>
-                  <th>Progress</th>
-                  <th style="width: 40px">Label</th>
-                </tr>
-                <tr>
-                  <td>1.</td>
-                  <td>Update software</td>
-                  <td>
-                    <div class="progress progress-xs">
-                      <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-red">55%</span></td>
-                </tr>
-                <tr>
-                  <td>2.</td>
-                  <td>Clean database</td>
-                  <td>
-                    <div class="progress progress-xs">
-                      <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-yellow">70%</span></td>
-                </tr>
-                <tr>
-                  <td>3.</td>
-                  <td>Cron job running</td>
-                  <td>
-                    <div class="progress progress-xs progress-striped active">
-                      <div class="progress-bar progress-bar-primary" style="width: 30%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-light-blue">30%</span></td>
-                </tr>
-                <tr>
-                  <td>4.</td>
-                  <td>Fix and squish bugs</td>
-                  <td>
-                    <div class="progress progress-xs progress-striped active">
-                      <div class="progress-bar progress-bar-success" style="width: 90%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-green">90%</span></td>
-                </tr>
-              </table>
-            </div>
-            <!-- /.box-body -->
-          </div>
-		   <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Total Tutors List</h3>
+              <h3 class="box-title">STUDENT INQUIRED</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body no-padding">

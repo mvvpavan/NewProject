@@ -483,40 +483,44 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form">
+            <form role="form"method="POST" action="../PHP/CreateWorkshop.php">
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Title Workshop</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter text">
+                  <input type="text" class="form-control" name="title" id="exampleInputEmail1" placeholder="Enter text">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Date</label>
-                  <input type="date" class="form-control" id="exampleInputEmail1" placeholder="Enter date">
+                  <input type="date" class="form-control" name="date" id="exampleInputEmail1" placeholder="Enter date">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Time</label>
-                  <input type="time" class="form-control" id="exampleInputEmail1" placeholder="Enter time">
+                  <input type="time" class="form-control" name="time" id="exampleInputEmail1" placeholder="Enter time">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Cost per student ($) </label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Example 100$ else default $">
+                  <input type="text" class="form-control" name="cost" id="exampleInputEmail1" placeholder="Example 100$ else default $">
                 </div>
-                <div class="form-group" >
+				<div class="form-group">
+                  <label for="exampleInputEmail1">Capacity</label>
+                  <input type="text" class="form-control" name="capacity"id="exampleInputEmail1" placeholder="Example 100$ else default $">
+                </div>
+                <div class="form-group">
                   <label for="exampleInputEmail1">Venu</label>
-                  <select class="form-control">
+                  <select class="form-control" name="venu" >
                      <option value="Online">Online</option>
                      <option value="Institute">Institute</option>
                    </select>
                 </div>
-                <div class="form-group">
+                <div class="form-group" >
                   <label for="exampleInputEmail1">Address</label>
-                <textarea  class="form-control" >Enter address
+                <textarea  class="form-control" name="address" >Enter address
                 </textarea></div>
               </div>
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <input id="button" type="submit" name="submit" class="btn btn-primary" value="NewWorkShop">
               </div>
             </form>
           </div>
