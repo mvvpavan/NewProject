@@ -30,17 +30,17 @@ if(!empty($_POST['email'])) //checking the 'user' name which is from Sign-Up.htm
 	} 
     else
     {
-	   while($row = mysql_fetch_array($query, MYSQL_ASSOC)) {
-          echo "EMP ID :{$row['email']}  <br> ".
-         "EMP NAME : {$row['type']} <br> ".
-         "EMP SALARY : {$row['password']} <br> ".
-         "--------------------------------<br>";
-         }
+	  // while($row = mysql_fetch_array($query, MYSQL_ASSOC)) {
+     //     echo "EMP ID :{$row['email']}  <br> ".
+      //   "EMP NAME : {$row['type']} <br> ".
+      //   "EMP SALARY : {$row['password']} <br> ".
+       //  "--------------------------------<br>";
+        // }
    
-		 // echo '<script type="text/javascript">'; 
-         // echo 'alert("SORRY...YOU ARE ALREADY REGISTERED USER...");'; 
-          //echo 'window.location.href = "../index.html";';
-          //echo '</script>';
+		  echo '<script type="text/javascript">'; 
+      echo 'alert("SORRY...YOU ARE ALREADY REGISTERED USER...");'; 
+      echo 'window.location.href = "../index.html";';
+      echo '</script>';
 		  //header("Location: ../index.html");
     }
 }

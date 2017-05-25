@@ -13,10 +13,14 @@
       {  
         $count = 1; 	 
          if ( strcasecmp( $row['type'], 'Student' ) == 0 ){
+
                 echo 'Student Sccessfull logged in';
+                header("Location: ../AdminLTE-master/Studentdashboard.html");
+
             }
 	   else{
-		      echo 'Tutor  Sccessfull logged in';
+		         echo 'Tutor  Sccessfull logged in';
+             header("Location: ../AdminLTE-master/index.html");
 	         }
       
    
