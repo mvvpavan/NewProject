@@ -39,6 +39,9 @@
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
+<script type="text/javascript">
+$(".js-example-basic-multiple").select2();
+</script>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
@@ -485,12 +488,61 @@
             <form role="form">
               <div class="box-body">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
+                  <label for="exampleInputEmail1">Requirement Summary</label>
                   <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  <label for="exampleInputEmail1">Subject</label>
+                 <select class="form-control"  multiple="multiple">
+                   <option value="AL">c++</option>
+                   <option value="WY">java</option>
+                   <option value="AL">c</option>
+                   <option value="WY">java</option>
+                   <option value="AL">cd</option>
+                   <option value="WY">paint</option>
+                 </select></div>
+                 <div class="form-group">
+                  <label for="exampleInputEmail1">Current Level</label>
+                 <select class="form-control">
+                   <option value="AL">None</option>
+                   <option value="beginer">Beginer</option>
+                   <option value="Advanced">Advanced</option>
+                   <option value="Expert">Expert</option>
+                   <option value="Grade0">Grade 0</option>
+                   <option value="Grade1">Grade 1</option>
+                   <option value="Grade2">Grade 2</option>
+                   <option value="Grade3">Grade 3</option>
+                   <option value="Grade4">Grade 4</option>
+                   <option value="Grade5">Grade 5</option>
+                   <option value="Grade6">Grade 6</option>
+                   <option value="Grade7">Grade 7</option>
+                   <option value="Grade8">Grade 8</option>
+                   <option value="Grade9">Grade 9</option>
+                   <option value="Grade10">Grade 10</option>
+                   <option value="Grade11">Grade 11</option>
+                   <option value="Grade12">Grade 12</option>
+                   <option value="Degree">Degree</option>
+                   <option value="PG">PG</option>
+                   <option value="PHD">PHD</option>
+                   <option value="Docterate">Docterate</option>
+                 </select></div>
+                 <div class="form-group">
+                 <label for="exampleInputEmail1">Service Looking</label>
+                 <select class="form-control">
+                   <option value="Tutoring">Tutoring</option>
+                   <option value="Assignment">Assignment</option>
+                   <option value="Workshop">Workshop</option>
+                   
+                 </select>
+                 </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Cost</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                </div>
+                <div class="form-group" >
+                  <label for="exampleInputEmail1">Details</label>
+                    <textarea  class="form-control" name="address" >
+                    </textarea>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputFile">File input</label>
@@ -633,7 +685,7 @@
 
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Create WORKSHOPS</h3>
+              <h3 class="box-title">Request WORKSHOPS</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body no-padding">
