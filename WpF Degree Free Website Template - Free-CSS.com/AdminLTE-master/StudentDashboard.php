@@ -39,9 +39,7 @@
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<script type="text/javascript">
-$(".js-example-basic-multiple").select2();
-</script>
+
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
@@ -485,15 +483,15 @@ $(".js-example-basic-multiple").select2();
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form">
+            <form role="form" method="POST" action="../PHP/NewJobPost.php">
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Requirement Summary</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                  <input type="text" name="summary" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Subject</label>
-                 <select class="form-control"  multiple="multiple">
+                 <select class="form-control" id="lstFruits" name="lstFruits"multiple="multiple" name="subject[]"  >
                    <option value="AL">c++</option>
                    <option value="WY">java</option>
                    <option value="AL">c</option>
@@ -503,7 +501,7 @@ $(".js-example-basic-multiple").select2();
                  </select></div>
                  <div class="form-group">
                   <label for="exampleInputEmail1">Current Level</label>
-                 <select class="form-control">
+                 <select class="form-control"name="level">
                    <option value="AL">None</option>
                    <option value="beginer">Beginer</option>
                    <option value="Advanced">Advanced</option>
@@ -528,7 +526,7 @@ $(".js-example-basic-multiple").select2();
                  </select></div>
                  <div class="form-group">
                  <label for="exampleInputEmail1">Service Looking</label>
-                 <select class="form-control">
+                 <select class="form-control"name="service">
                    <option value="Tutoring">Tutoring</option>
                    <option value="Assignment">Assignment</option>
                    <option value="Workshop">Workshop</option>
@@ -537,7 +535,7 @@ $(".js-example-basic-multiple").select2();
                  </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Cost</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                  <input type="number" name="cost"class="form-control" id="exampleInputEmail1" placeholder="Enter email">
                 </div>
                 <div class="form-group" >
                   <label for="exampleInputEmail1">Details</label>
@@ -559,7 +557,7 @@ $(".js-example-basic-multiple").select2();
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <input id="button" type="submit" name="submit" class="btn btn-primary" value="NewPostJob">
               </div>
             </form>
           </div>
@@ -1101,6 +1099,7 @@ $(".js-example-basic-multiple").select2();
 <script src="plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
+<script src="dist/js/select.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
