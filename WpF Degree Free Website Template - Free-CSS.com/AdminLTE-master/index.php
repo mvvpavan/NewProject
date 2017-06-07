@@ -521,7 +521,7 @@
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <input id="button" type="submit" name="submit" class="btn btn-primary" value="NewWorkShop">
+                <input id="button" type="submit" name="submit" class="btn btn-primary" value="NewPostJob">
               </div>
             </form>
           </div>
