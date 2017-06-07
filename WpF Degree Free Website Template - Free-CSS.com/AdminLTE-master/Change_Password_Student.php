@@ -383,12 +383,12 @@ $(".js-example-basic-multiple").select2();
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="Tutorinquires.php"><i class="fa fa-user-circle-o"></i> Tutors inquiries</a></li>
+            <li><a href="pages/layout/top-nav.html"><i class="fa fa-user-circle-o"></i> Tutors inquiries</a></li>
           </ul>
         </li>
         <li>
           <a href="pages/mailbox/mailbox.html">
-            <i class="fa fa-envelope"></i> <span>Messages</span>
+            <i class="fa fa-envelope"></i> <span>Mailbox</span>
             <span class="pull-right-container">
               <small class="label pull-right bg-yellow">12</small>
               <small class="label pull-right bg-green">16</small>
@@ -498,79 +498,29 @@ $(".js-example-basic-multiple").select2();
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" method="POST" action="../PHP/NewJobPost.php" autocomplete="off">
+            <form role="form">
               <div class="box-body">
+                
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Summary</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" name="summary" placeholder="Enter Summary">
+                  <label for="exampleInputEmail1">Current Password</label>
+                  <input type="password" class="form-control" id="exampleInputEmail1" placeholder="Enter Summary">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Subject</label>
-                  <br>
-                 <select class="multipleSelect" name="subject[]" multiple>
-                   <option value="AL">c++</option>
-                   <option value="WY">java</option>
-                   <option value="c">c</option>
-                   <option value="k">java</option>
-                   <option value="cd">cd</option>
-                   <option value="paint">paint</option>
-                 </select></div>
-                 <div class="form-group">
-                  <label for="exampleInputEmail1">Current Level</label>
-                 <select class="form-control " name="level">
-                   <option value="AL">None</option>
-                   <option value="beginer">Beginer</option>
-                   <option value="Advanced">Advanced</option>
-                   <option value="Expert">Expert</option>
-                   <option value="Grade0">Grade 0</option>
-                   <option value="Grade1">Grade 1</option>
-                   <option value="Grade2">Grade 2</option>
-                   <option value="Grade3">Grade 3</option>
-                   <option value="Grade4">Grade 4</option>
-                   <option value="Grade5">Grade 5</option>
-                   <option value="Grade6">Grade 6</option>
-                   <option value="Grade7">Grade 7</option>
-                   <option value="Grade8">Grade 8</option>
-                   <option value="Grade9">Grade 9</option>
-                   <option value="Grade10">Grade 10</option>
-                   <option value="Grade11">Grade 11</option>
-                   <option value="Grade12">Grade 12</option>
-                   <option value="Degree">Degree</option>
-                   <option value="PG">PG</option>
-                   <option value="PHD">PHD</option>
-                   <option value="Docterate">Docterate</option>
-                 </select></div>
-                 <div class="form-group">
-                 <label for="exampleInputEmail1">Service Looking</label>
-                 <select class="form-control" name="service">
-                   <option value="Tutoring">Tutoring</option>
-                   <option value="Assignment">Assignment</option>
-                   <option value="Workshop">Workshop</option>
-                   
-                 </select>
-                 </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Cost</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" name="cost" placeholder="Enter amount on Dollers">
-                </div>
-                <div class="form-group" >
-                  <label for="exampleInputEmail1">Details</label>
-                    <textarea  class="form-control" name="details" >
-                    </textarea>
+                  <label for="exampleInputEmail1">New Password</label>
+                  <input type="password" class="form-control" id="exampleInputEmail1" placeholder="Enter Summary">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputFile">File input</label>
-                  <input type="file" id="exampleInputFile">
-
-                  <p class="help-block">Optional Requirements file.</p>
+                  <label for="exampleInputEmail1">Confirm New Password</label>
+                  <input type="password" class="form-control" id="exampleInputEmail1" placeholder="Enter Summary">
                 </div>
+               
                 
               </div>
               <!-- /.box-body -->
 
               <div class="box-footer">
-                 <input id="button" type="submit" name="submit" class="btn btn-primary" value="Sign-Up">
-         </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
             
             </form>
           </div>
@@ -642,7 +592,7 @@ $(".js-example-basic-multiple").select2();
           
             <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Tutors Inquiries</h3>
+              <h3 class="box-title">Requested Tutor</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body no-padding">

@@ -8,7 +8,8 @@ function NewUser()
   $mobile = $_POST['mobile']; 
   $countryCode = $_POST['countryCode'];
   $phone=$mobile.$countryCode; 
-   $query = "INSERT INTO users (fullname,email,password,mobile) VALUES ('$fullname','$email','$password','$phone')"; 
+  $type=$_POST['type'];
+   $query = "INSERT INTO users (fullname,email,password,mobile,countryCode,type) VALUES ('$fullname','$email','$password','$mobile','$countryCode','$type')"; 
    $data = mysql_query ($query)or die(mysql_error()); 
    if($data) 
    { 
@@ -29,13 +30,14 @@ function SignUp() { if(!empty($_POST['email'])) //checking the 'user' name which
 	} 
     else
     {
-		  echo '<script type="text/javascript">'; 
+		      echo '<script type="text/javascript">'; 
           echo 'alert("SORRY...YOU ARE ALREADY REGISTERED USER...");'; 
           echo 'window.location.href = "../index.html";';
           echo '</script>';
 		  //header("Location: ../index.html");
     }
-		} 
+} 
+}
 	if(isset($_POST['submit'])) 
 		{ 
 			echo "Data entered";

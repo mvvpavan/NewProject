@@ -9,14 +9,14 @@
       $myusername = $_POST['email'];
       $mypassword = $_POST['password']; 
       
-      $query = mysql_query("SELECT fullname,email,type,password FROM users WHERE email = '$_POST[email]' AND password = '$_POST[password]'") or die(mysql_error()); 
+      $query = mysql_query("SELECT userID,fullname,email,type,password FROM users WHERE email = '$_POST[email]' AND password = '$_POST[password]'") or die(mysql_error()); 
    if($row = mysql_fetch_array($query,MYSQLI_ASSOC) or die(mysql_error())) 
       {  
         $count = 1; 	 
          if ( strcasecmp( $row['type'], 'Student' ) == 0 ){
            
-               $_SESSION['fullname']=$row['fullname'];
-			    $_SESSION['email']=$row['email'];
+               $_SESSION['userID']=$row['userID'];
+			         $_SESSION['email']=$row['email'];
                 echo 'Student Sccessfull logged in';
                 header("Location: ../AdminLTE-master/Studentdashboard.php");
 

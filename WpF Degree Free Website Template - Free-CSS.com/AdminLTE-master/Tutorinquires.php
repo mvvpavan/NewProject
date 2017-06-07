@@ -316,9 +316,7 @@ $(".js-example-basic-multiple").select2();
             </ul>
           </li>
           <!-- Control Sidebar Toggle Button -->
-          <li>
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-          </li>
+          
         </ul>
       </div>
     </nav>
@@ -383,7 +381,7 @@ $(".js-example-basic-multiple").select2();
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="Tutorinquires.php"><i class="fa fa-user-circle-o"></i> Tutors inquiries</a></li>
+            <li><a href="pages/layout/top-nav.html"><i class="fa fa-user-circle-o"></i> Tutors inquiries</a></li>
           </ul>
         </li>
         <li>
@@ -493,86 +491,62 @@ $(".js-example-basic-multiple").select2();
           
             <!-- /.box-header -->
             <div class="box box-primary">
-            <div class="box-header with-border">
-              <h3 class="box-title">Request Tutor</h3>
+            <div class="box-header">
+              <h3 class="box-title">Tutors Inquiries</h3>
             </div>
             <!-- /.box-header -->
-            <!-- form start -->
-            <form role="form" method="POST" action="../PHP/NewJobPost.php" autocomplete="off">
-              <div class="box-body">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Summary</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" name="summary" placeholder="Enter Summary">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Subject</label>
-                  <br>
-                 <select class="multipleSelect" name="subject[]" multiple>
-                   <option value="AL">c++</option>
-                   <option value="WY">java</option>
-                   <option value="c">c</option>
-                   <option value="k">java</option>
-                   <option value="cd">cd</option>
-                   <option value="paint">paint</option>
-                 </select></div>
-                 <div class="form-group">
-                  <label for="exampleInputEmail1">Current Level</label>
-                 <select class="form-control " name="level">
-                   <option value="AL">None</option>
-                   <option value="beginer">Beginer</option>
-                   <option value="Advanced">Advanced</option>
-                   <option value="Expert">Expert</option>
-                   <option value="Grade0">Grade 0</option>
-                   <option value="Grade1">Grade 1</option>
-                   <option value="Grade2">Grade 2</option>
-                   <option value="Grade3">Grade 3</option>
-                   <option value="Grade4">Grade 4</option>
-                   <option value="Grade5">Grade 5</option>
-                   <option value="Grade6">Grade 6</option>
-                   <option value="Grade7">Grade 7</option>
-                   <option value="Grade8">Grade 8</option>
-                   <option value="Grade9">Grade 9</option>
-                   <option value="Grade10">Grade 10</option>
-                   <option value="Grade11">Grade 11</option>
-                   <option value="Grade12">Grade 12</option>
-                   <option value="Degree">Degree</option>
-                   <option value="PG">PG</option>
-                   <option value="PHD">PHD</option>
-                   <option value="Docterate">Docterate</option>
-                 </select></div>
-                 <div class="form-group">
-                 <label for="exampleInputEmail1">Service Looking</label>
-                 <select class="form-control" name="service">
-                   <option value="Tutoring">Tutoring</option>
-                   <option value="Assignment">Assignment</option>
-                   <option value="Workshop">Workshop</option>
-                   
-                 </select>
-                 </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Cost</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" name="cost" placeholder="Enter amount on Dollers">
-                </div>
-                <div class="form-group" >
-                  <label for="exampleInputEmail1">Details</label>
-                    <textarea  class="form-control" name="details" >
-                    </textarea>
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputFile">File input</label>
-                  <input type="file" id="exampleInputFile">
-
-                  <p class="help-block">Optional Requirements file.</p>
-                </div>
-                
-              </div>
-              <!-- /.box-body -->
-
-              <div class="box-footer">
-                 <input id="button" type="submit" name="submit" class="btn btn-primary" value="Sign-Up">
-         </div>
-            
-            </form>
+            <div class="box-body no-padding">
+              <table class="table table-striped">
+                <tr>
+                  <th style="width: 10px">#</th>
+                  <th>Task</th>
+                  <th>Progress</th>
+                  <th style="width: 40px">Label</th>
+                </tr>
+                <tr>
+                  <td>1.</td>
+                  <td>Update software</td>
+                  <td>
+                    <div class="progress progress-xs">
+                      <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                    </div>
+                  </td>
+                  <td><span class="badge bg-red">55%</span></td>
+                </tr>
+                <tr>
+                  <td>2.</td>
+                  <td>Clean database</td>
+                  <td>
+                    <div class="progress progress-xs">
+                      <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
+                    </div>
+                  </td>
+                  <td><span class="badge bg-yellow">70%</span></td>
+                </tr>
+                <tr>
+                  <td>3.</td>
+                  <td>Cron job running</td>
+                  <td>
+                    <div class="progress progress-xs progress-striped active">
+                      <div class="progress-bar progress-bar-primary" style="width: 30%"></div>
+                    </div>
+                  </td>
+                  <td><span class="badge bg-light-blue">30%</span></td>
+                </tr>
+                <tr>
+                  <td>4.</td>
+                  <td>Fix and squish bugs</td>
+                  <td>
+                    <div class="progress progress-xs progress-striped active">
+                      <div class="progress-bar progress-bar-success" style="width: 90%"></div>
+                    </div>
+                  </td>
+                  <td><span class="badge bg-green">90%</span></td>
+                </tr>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          
           </div>
           <!-- /.box -->
         <div class="box">
@@ -637,66 +611,6 @@ $(".js-example-basic-multiple").select2();
         <!-- /.Left col -->
         <!-- right col (We are only adding the ID to make the widgets sortable)-->
         <section class="col-lg-5 connectedSortable">
-
-          
-          
-            <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Tutors Inquiries</h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body no-padding">
-              <table class="table table-striped">
-                <tr>
-                  <th style="width: 10px">#</th>
-                  <th>Task</th>
-                  <th>Progress</th>
-                  <th style="width: 40px">Label</th>
-                </tr>
-                <tr>
-                  <td>1.</td>
-                  <td>Update software</td>
-                  <td>
-                    <div class="progress progress-xs">
-                      <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-red">55%</span></td>
-                </tr>
-                <tr>
-                  <td>2.</td>
-                  <td>Clean database</td>
-                  <td>
-                    <div class="progress progress-xs">
-                      <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-yellow">70%</span></td>
-                </tr>
-                <tr>
-                  <td>3.</td>
-                  <td>Cron job running</td>
-                  <td>
-                    <div class="progress progress-xs progress-striped active">
-                      <div class="progress-bar progress-bar-primary" style="width: 30%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-light-blue">30%</span></td>
-                </tr>
-                <tr>
-                  <td>4.</td>
-                  <td>Fix and squish bugs</td>
-                  <td>
-                    <div class="progress progress-xs progress-striped active">
-                      <div class="progress-bar progress-bar-success" style="width: 90%"></div>
-                    </div>
-                  </td>
-                  <td><span class="badge bg-green">90%</span></td>
-                </tr>
-              </table>
-            </div>
-            <!-- /.box-body -->
-          </div>
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">NEW WORKSHOPS</h3>

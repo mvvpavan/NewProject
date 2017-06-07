@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 25, 2017 at 01:49 PM
+-- Generation Time: Jun 07, 2017 at 04:21 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -19,6 +19,30 @@ SET time_zone = "+00:00";
 --
 -- Database: `brightfeaturehub`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `newjob`
+--
+
+CREATE TABLE `newjob` (
+  `newJobID` int(10) NOT NULL,
+  `userID` varchar(20) NOT NULL,
+  `summary` varchar(30) NOT NULL,
+  `level` varchar(30) NOT NULL,
+  `subject` varchar(50) NOT NULL,
+  `service` varchar(30) NOT NULL,
+  `cost` varchar(30) NOT NULL,
+  `details` varchar(50) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `newjob`
+--
+
+INSERT INTO `newjob` (`newJobID`, `userID`, `summary`, `level`, `subject`, `service`, `cost`, `details`) VALUES
+(1, '', 'pabbbb', 'AL', 'cdcd\n', 'Tutoring', '10000', '');
 
 -- --------------------------------------------------------
 
@@ -88,6 +112,12 @@ CREATE TABLE `workshopapplied` (
 --
 
 --
+-- Indexes for table `newjob`
+--
+ALTER TABLE `newjob`
+  ADD PRIMARY KEY (`newJobID`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -109,6 +139,11 @@ ALTER TABLE `workshopapplied`
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `newjob`
+--
+ALTER TABLE `newjob`
+  MODIFY `newJobID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `users`
 --
